@@ -209,6 +209,7 @@ class Qwen2AudioEncoderLayer(GradientCheckpointingLayer):
         hidden_states: torch.Tensor,
         attention_mask: torch.Tensor,
         output_attentions: bool = False,
+        **kwargs,
     ) -> torch.Tensor:
         """
         Args:
