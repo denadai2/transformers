@@ -157,6 +157,8 @@ class Qwen2AudioAttention(nn.Module):
         if len(hidden_states.size()) == 2:
             hidden_states = hidden_states.unsqueeze(-1)
 
+        print(hidden_states.size())
+
         bsz, tgt_len, _ = hidden_states.size()
 
         # Scaling is susceptible to floating point arithmetics' inprecisions
