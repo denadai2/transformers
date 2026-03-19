@@ -211,6 +211,7 @@ class Qwen2AudioEncoderLayer(GradientCheckpointingLayer):
         self,
         hidden_states: torch.Tensor,
         attention_mask: torch.Tensor,
+        boh=None,
         **kwargs: Unpack[TransformersKwargs],
     ) -> torch.Tensor:
         """
