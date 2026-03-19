@@ -154,7 +154,8 @@ class Qwen2AudioAttention(nn.Module):
     ) -> tuple[torch.Tensor, torch.Tensor | None, tuple[torch.Tensor] | None]:
         """Input shape: Batch x Time x Channel"""
 
-        hidden_states = hidden_states.unsqueeze(-1)
+        if len(hidden_states.size()) == 2:
+            hidden_states = hidden_states.unsqueeze(-1)
 
         bsz, tgt_len, _ = hidden_states.size()
 
